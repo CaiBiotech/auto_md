@@ -1,0 +1,16 @@
+Sample input file for PB calculation
+This input file is meant to show only that gmx_MMPBSA works. Although, we tried to use the input files as recommended
+in the Amber manual, some parameters have been changed to perform more expensive calculations in a reasonable amount of time. Feel free to change the
+parameters according to what is better for your system.
+
+&general
+sys_name="Prot-Lig-ST",
+startframe=1,
+endframe=200,
+forcefields="oldff/leaprc.ff99SB,leaprc.gaff2"
+/
+&gb
+# radiopt=0 is recommended which means using radii from the prmtop file for both the PB calculation and for the NP
+# calculation
+saltcon=0.15, igb=5
+/
